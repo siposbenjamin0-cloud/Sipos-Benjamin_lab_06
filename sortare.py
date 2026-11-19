@@ -10,3 +10,14 @@ def bubble_sort(numere):
 
     return numere
 
+
+# Insertion Sort
+def insertion_sort(numere):
+    for i in range(1, len(numere)):
+        j = i
+
+        while j > 0 and numere[j] < numere[j - 1]:
+            numere[j], numere[j - 1] = numere[j - 1], numere[j]
+            j = j - 1
+
+    return numere
