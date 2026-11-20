@@ -1,5 +1,4 @@
 
-
 import os
 
 # Bubble Sort
@@ -24,9 +23,13 @@ def insertion_sort(numere):
     return numere
 
 
+# Gasirea fisierului date.txt
+folder = os.path.dirname(os.path.abspath(__file__))
+cale = os.path.join(folder, "date.txt")
+
 # Citirea fisierului
-if os.path.exists("date.txt"):
-    fisier = open("date.txt", "r")
+if os.path.exists(cale):
+    fisier = open(cale, "r", encoding="utf-8")
 
     linia1 = fisier.readline()
     linia2 = fisier.readline()
@@ -67,7 +70,7 @@ if os.path.exists("date.txt"):
             text = text + str(x) + " "
 
         # Scrierea rezultatului in fisier
-        fisier = open("date.txt", "w")
+        fisier = open(cale, "w", encoding="utf-8")
 
         fisier.write(linia1.rstrip("\r\n") + "\n")
         fisier.write(linia2.rstrip("\r\n") + "\n")
@@ -79,4 +82,4 @@ if os.path.exists("date.txt"):
 
 else:
     print("Eroare: fisierul date.txt nu exista!")
-
+    print("Fisierul este cautat aici:", cale)
